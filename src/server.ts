@@ -6,5 +6,4 @@ const app = express();
 
 app.use('/', routes);
 
-
-app.listen(3333, () => console.log("Server start on port http://localhost:3333"));
+app.listen(3333, () => console.log('Server start on port http://localhost:3333'));
