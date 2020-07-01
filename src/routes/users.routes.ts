@@ -1,13 +1,14 @@
 import { Router } from 'express';
-import { uuid } from 'uuidv4';
+
+import User from '../models/User';
 
 const usersRouter = Router();
 
 interface UserInterface {
+  id: string;
   name: string;
   email: string;
   password: string;
-  id: string;
 }
 
 const users: UserInterface[] = [];
@@ -21,12 +22,7 @@ usersRouter.post('/', (request, response) => {
     return response.status(400).json('This e-mail is already used!');
   }
 
-  const user = {
-    id: uuid(),
-    name,
-    email,
-    password,
-  };
+  const user = new User({ name, email, password });
 
   users.push(user);
 
