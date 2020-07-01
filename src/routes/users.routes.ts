@@ -3,10 +3,23 @@ import { uuid } from 'uuidv4';
 
 const usersRouter = Router();
 
-const users: object[] = [];
+interface UserInterface {
+  name: string;
+  email: string;
+  password: string;
+  id: string;
+}
+
+const users: UserInterface[] = [];
 
 usersRouter.post('/', (request, response) => {
   const { name, email, password } = request.body;
+
+  const existUserEmail = users.find(item => item.email === email);
+
+  if (existUserEmail) {
+    return response.status(400).json('This e-mail is already used!');
+  }
 
   const user = {
     id: uuid(),

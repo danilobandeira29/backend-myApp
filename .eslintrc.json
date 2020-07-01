@@ -26,7 +26,8 @@
         {
           "ts":"never"
         }
-			]
+      ],
+      "arrow-parens":"off"
 
 
     },
