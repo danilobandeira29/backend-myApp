@@ -1,11 +1,5 @@
 import { uuid } from 'uuidv4';
 
-interface UserData {
-  name: string;
-  email: string;
-  password: string;
-}
-
 class User {
   id: string;
 
@@ -15,7 +9,7 @@ class User {
 
   password: string;
 
-  constructor({ name, email, password }: UserData) {
+  constructor({ name, email, password }: Omit<User, 'id'>) {
     this.id = uuid();
     this.name = name;
     this.email = email;
