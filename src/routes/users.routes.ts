@@ -2,6 +2,7 @@ import { Router } from 'express';
 
 import UsersRepository from '../repositories/UsersRepository';
 import CreateUserService from '../services/CreateUserService';
+import ensuredAuthenticated from '../middlewares/ensureAuthenticated';
 
 const usersRouter = Router();
 
@@ -21,7 +22,7 @@ usersRouter.post('/', (request, response) => {
   }
 });
 
-usersRouter.get('/', (request, response) => {
+usersRouter.get('/', ensuredAuthenticated, (request, response) => {
   const users = usersRepository.all();
 
   return response.json(users);

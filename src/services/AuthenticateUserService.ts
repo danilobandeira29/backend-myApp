@@ -1,6 +1,7 @@
 import { sign } from 'jsonwebtoken';
 import User from '../models/User';
 import UsersRepository from '../repositories/UsersRepository';
+import authConfig from '../config/auth';
 
 interface Request {
   password: string;
@@ -30,14 +31,12 @@ class AuthenticateUserService {
       throw Error('Incorrect e-mail/password combination');
     }
 
-    const token = sign(
-      {},
-      'A63AB36162A4F4EE6622CCD787B0A048C26B93ACFC05C6B1843659B253C3C00B',
-      {
-        subject: user.id,
-        expiresIn: '60s',
-      },
-    );
+    const { expiresIn, secret } = authConfig.jwt;
+
+    const token = sign({}, secret, {
+      subject: user.id,
+      expiresIn,
+    });
 
     return { user, token };
   }
