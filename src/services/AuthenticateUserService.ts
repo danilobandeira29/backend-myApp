@@ -3,6 +3,8 @@ import User from '../models/User';
 import UsersRepository from '../repositories/UsersRepository';
 import authConfig from '../config/auth';
 
+import AppError from '../errors/AppError';
+
 interface Request {
   password: string;
   email: string;
@@ -24,11 +26,11 @@ class AuthenticateUserService {
     const user = this.usersRepository.findEmailExists(email);
 
     if (!user) {
-      throw Error('Incorrect e-mail/password combination');
+      throw new AppError('Incorrect e-mail/password combination', 401);
     }
 
     if (user.password !== password) {
-      throw Error('Incorrect e-mail/password combination');
+      throw new AppError('Incorrect e-mail/password combination', 401);
     }
 
     const { expiresIn, secret } = authConfig.jwt;

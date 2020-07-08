@@ -1,6 +1,8 @@
 import UsersRepository from '../repositories/UsersRepository';
 import User from '../models/User';
 
+import AppError from '../errors/AppError';
+
 interface RequestData {
   name: string;
   email: string;
@@ -18,7 +20,7 @@ class CreateUserService {
     const existUserEmail = this.usersRepository.findEmailExists(email);
 
     if (existUserEmail) {
-      throw Error('This e-mail is already used!');
+      throw new AppError('This e-mail is already used!');
     }
 
     const user = this.usersRepository.create({ name, email, password });
