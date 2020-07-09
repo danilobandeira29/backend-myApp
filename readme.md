@@ -3,6 +3,7 @@
 - [Desafio](#-Desafio)
 - [Tecnologias Utilizadas](#-Tecnologias-utilizadas)
 - [Padrões de Código](#-Padrões-de-Código)
+- [Baixar o Projeto](#Baixar-o-Projeto)
 
 
 ## 📝 Sobre
