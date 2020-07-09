@@ -9,17 +9,13 @@ const usersRouter = Router();
 const usersRepository = new UsersRepository();
 
 usersRouter.post('/', (request, response) => {
-  try {
-    const { name, email, password } = request.body;
+  const { name, email, password } = request.body;
 
-    const createUser = new CreateUserService(usersRepository);
+  const createUser = new CreateUserService(usersRepository);
 
-    const user = createUser.execute({ name, email, password });
+  const user = createUser.execute({ name, email, password });
 
-    return response.json(user);
-  } catch (err) {
-    return response.status(err.statusCode).json({ error: err.message });
-  }
+  return response.json(user);
 });
 
 usersRouter.get('/', ensuredAuthenticated, (request, response) => {
