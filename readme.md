@@ -7,7 +7,7 @@
 - [Challenges](#-Challenges)
 - [Techs](#-Techs)
 - [Code formatters](#-Code-formatters)
-- [Clone the repository](#Clone-the-repository)
+- [Clone the repository](#-Clone-the-repository)
 
 
 ## 📝 About
@@ -62,7 +62,7 @@ clients from a hospital. Also includes user login to use these features.
 - [Desafio](#-Desafio)
 - [Tecnologias](#-Tecnologias)
 - [Formatadores de Código](#-Formatadores-de-Código)
-- [Baixar o Projeto](#Baixar-o-Projeto)
+- [Baixar o Projeto](#-Baixar-o-Projeto)
 
 
 ## 📝 Sobre
