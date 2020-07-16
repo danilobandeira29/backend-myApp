@@ -111,4 +111,4 @@ Backend do projeto myApp, que busca **criar**, **listar**, **atualizar**, **remo
 
 ---
 
-Developed by/Desenvolvido por 👻 [Danilo Bandeira](https://www.linkedin.com/in/danilo-bandeira-4411851a4/)
+**Developed by/Desenvolvido por** 👻 <a href="https://www.linkedin.com/in/danilo-bandeira-4411851a4/">**Danilo Bandeira**</a>
