@@ -3,7 +3,7 @@ import User from '../models/User';
 
 import AppError from '../errors/AppError';
 
-interface RequestData {
+interface IRequestData {
   name: string;
   email: string;
   password: string;
@@ -16,7 +16,7 @@ class CreateUserService {
     this.usersRepository = usersRepository;
   }
 
-  public execute({ name, email, password }: RequestData): User {
+  public execute({ name, email, password }: IRequestData): User {
     const existUserEmail = this.usersRepository.findEmailExists(email);
 
     if (existUserEmail) {

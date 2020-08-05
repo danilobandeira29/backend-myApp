@@ -1,8 +1,6 @@
 import { Router } from 'express';
 import AuthenticateUserService from '../services/AuthenticateUserService';
-import UsersRepository from '../repositories/UsersRepository';
-
-const usersRepository = new UsersRepository();
+import { usersRepository } from './users.routes';
 
 const sessionsRouter = Router();
 

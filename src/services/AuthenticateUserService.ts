@@ -5,12 +5,12 @@ import authConfig from '../config/auth';
 
 import AppError from '../errors/AppError';
 
-interface Request {
+interface IRequest {
   password: string;
   email: string;
 }
 
-interface Response {
+interface IResponse {
   user: User;
   token: string;
 }
@@ -22,7 +22,7 @@ class AuthenticateUserService {
     this.usersRepository = usersRepository;
   }
 
-  public execute({ password, email }: Request): Response {
+  public execute({ password, email }: IRequest): IResponse {
     const user = this.usersRepository.findEmailExists(email);
 
     if (!user) {

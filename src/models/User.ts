@@ -9,11 +9,14 @@ class User {
 
   password: string;
 
-  constructor({ name, email, password }: Omit<User, 'id'>) {
+  avatar?: string | null;
+
+  constructor({ name, email, password, avatar = null }: Omit<User, 'id'>) {
     this.id = uuid();
     this.name = name;
     this.email = email;
     this.password = password;
+    this.avatar = avatar;
   }
 }
 
